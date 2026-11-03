@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const SOURCE_IMAGE = join(__dirname, '../src/app/icon.png');
+const SOURCE_IMAGE = join(__dirname, '../public/icon-source.svg');
 const OUTPUT_DIR = join(__dirname, '../public/icons');
 const SIZES = [72, 96, 128, 144, 152, 180, 192, 384, 512];
 
@@ -36,7 +36,7 @@ async function generateIcons() {
       await sharp(SOURCE_IMAGE)
         .resize(size, size, {
           fit: 'contain',
-          background: { r: 37, g: 99, b: 235, alpha: 1 }, // bg biru sesuai theme_color
+          background: { r: 236, g: 72, b: 153, alpha: 1 },
         })
         .png()
         .toFile(outputFile);

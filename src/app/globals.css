@@ -2,14 +2,14 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff7fb;
+  --foreground: #27152a;
   --navbar-height: 4rem; /* 64px = h-16 */
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #1b1024;
+  --foreground: #fff1fb;
 }
 
 @theme inline {
@@ -17,13 +17,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 html, body {
@@ -39,6 +32,18 @@ body {
   /* iOS safe area support */
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
+}
+
+.app-shell {
+  background-image:
+    radial-gradient(circle at 8% 12%, rgba(244, 114, 182, 0.12), transparent 28%),
+    radial-gradient(circle at 92% 88%, rgba(217, 70, 239, 0.1), transparent 30%);
+}
+
+.dark .app-shell {
+  background-image:
+    radial-gradient(circle at 8% 12%, rgba(232, 121, 249, 0.12), transparent 28%),
+    radial-gradient(circle at 92% 88%, rgba(244, 63, 94, 0.1), transparent 30%);
 }
 
 /* Ensure fixed nav always on top */
